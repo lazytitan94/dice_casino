@@ -1,6 +1,5 @@
 #include <iostream>
 #include <iomanip>
-#include <fstream>
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
@@ -60,10 +59,10 @@ int main()
 		{ 
 			if (balance > 0)
 			{
-				cout << "How much do you want to bet? " << endl;
+				cout << "How much do you want to bet?" << endl;
 				cin >> bet;
 				dice = rand() % 10 + 1;
-				cout << "You rolled " << dice << endl;
+				cout << "You rolled: " << dice << endl;
 				dicec = rand() % 10 + 1;
 				cout << "The computer has rolled: " << dicec << endl;
 				if (dice == dicec)
@@ -95,8 +94,8 @@ int main()
 		{
 			cout << "Please type in the amount you want to withdraw: " << endl;
 			cin >> balancered;
-			cout << balancered << "was withdrawn succesfully!!" << endl;
-			cout << "The amount of " << balancered << "was deposited to your bank!!" << endl;
+			cout << balancered << " was withdrawn succesfully!!" << endl;
+			cout << "The amount of " << balancered << " was deposited to your bank!!" << endl;
 			balance -= balancered;
 			cout << "Your remaining balance is: " << balance << endl;
 			cout << "Do you want to continue? y or n" << endl;
