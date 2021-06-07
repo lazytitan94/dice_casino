@@ -31,7 +31,7 @@ void menu() {
 
 int main()
 {
-	
+
 	cout << "Welcome to the Casino Odelia!!" << endl;
 	cout << "Please type in your name." << endl;
 	cin.getline(name, 20);
@@ -62,40 +62,40 @@ int main()
 			cout << "How much do you want to bet? " << endl;
 			cin >> bet;
 
-				if (balance > bet)
+			if (balance >= bet)
+			{
+
+				dice = rand() % 10 + 1;
+				cout << "You rolled " << dice << endl;
+				dicec = rand() % 10 + 1;
+				cout << "The computer has rolled: " << dicec << endl;
+				if (dice == dicec)
 				{
-					
-					dice = rand() % 10 + 1;
-					cout << "You rolled " << dice << endl;
-					dicec = rand() % 10 + 1;
-					cout << "The computer has rolled: " << dicec << endl;
-					if (dice == dicec)
-					{
-						winnings = bet * 3;
-						balance += winnings;
-						cout << "Congratulations you won " << winnings << "!!" << endl;
-						cout << "Do you want to continue? y or n" << endl;
-						cin >> choice1;
-					}
-					else
-					{
-						balance -= bet;
-						cout << "Sorry you lose!" << endl;
-						cout << "Do you want to continue? y or n" << endl;
-						cin >> choice1;
-					}
-					break;
-				}
-
-
-				else {
-					cout << "Sorry you do not have enough cash to play!" << endl;
+					winnings = bet * 3;
+					balance += winnings;
+					cout << "Congratulations you won " << winnings << "!!" << endl;
 					cout << "Do you want to continue? y or n" << endl;
 					cin >> choice1;
-					break;
-
 				}
-			
+				else
+				{
+					balance -= bet;
+					cout << "Sorry you lose!" << endl;
+					cout << "Do you want to continue? y or n" << endl;
+					cin >> choice1;
+				}
+				break;
+			}
+
+
+			else {
+				cout << "Sorry you do not have enough cash to play!" << endl;
+				cout << "Do you want to continue? y or n" << endl;
+				cin >> choice1;
+				break;
+
+			}
+
 		}
 		case 3:
 		{
@@ -126,7 +126,10 @@ int main()
 
 	} while (choice != 5 && choice1 != 'n');
 
-	
+	if (choice1 == 'n')
+	{
+		cout << "Thanks for playing with us " << name << "!!!" << endl;
+		}
 
 
 
